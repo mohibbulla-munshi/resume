@@ -16,9 +16,41 @@ hr {
 /* Header-area */
 .header-area {
   display: flex;
-  align-items: right;
+  justify-content: space-between;
+  align-items: center;
 }
 .right-area img {
-  width: 200px;
-  height: 220px;
+  width: 150px;
+  height: 180px;
+}
+
+/* Education Area */
+.education table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+.education th {
+  padding: 15px;
+  border: 1px solid;
+}
+.education td {
+  padding: 15px;
+  border: 1px solid;
+}
+
+/* computer-skills */
+.computer-skills table {
+  width: 100%;
+}
+
+/* personal-info */
+.personal-info table {
+  width: 60%;
+  margin: auto;
+}
+
+/* copyright */
+.copyright p {
+  text-align: center;
 }
