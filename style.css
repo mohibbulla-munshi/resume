@@ -12,6 +12,9 @@ h2 {
 hr {
   margin: 0px;
 }
+table {
+  margin-top: 20px;
+}
 
 /* Header-area */
 .header-area {
@@ -28,7 +31,8 @@ hr {
 .education table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .education th {
   padding: 15px;
@@ -42,12 +46,16 @@ hr {
 /* computer-skills */
 .computer-skills table {
   width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 /* personal-info */
 .personal-info table {
   width: 60%;
   margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 /* copyright */
