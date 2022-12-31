@@ -1,3 +1,6 @@
+<?php 
+  include "./data.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,12 +17,11 @@
   <div class="container">
     <section class="header-area">
       <div class="left-area">
-        <h2>Mohibbulla Munshi</h2>
+        <h2><?php echo $resume['personalInfo']['name'] ?></h2>
         <address>
-          House #05, Arjotpara, Mohakhali, Dhaka-1205<br>
-          Email:<a href="mailto:mohib.agu@gmail.com"> mohib.agu@gmail.com</a><br>
-          Tel:<a href="tel:+8801757364843">
-            +8801757364843</a>
+          House: <?php echo $resume['personalInfo']['house'] ?><br>
+          Email: <a href="mailto:mohib.agu@gmail.com"> <?php echo $resume['personalInfo']['email'] ?></a><br>
+          Tel:<a href="tel:+8801757364843"> <?php echo $resume['personalInfo']['tel'] ?><a>
         </address>
       </div>
       <div class="right-area">
@@ -28,26 +30,20 @@
     </section>
     <section class="main-area">
       <div class="career-objective">
-        <h2>Career Objective</h2>
+        <h2><?php echo $resume['careerObjective']['title'] ?></h2>
         <hr>
-        <p>To obtain entry level work place where I can enrich my ability & efficiency to field the optimum
-          battement for the organization & thus to enhance professional skill. Searching for a desirable
-          opportunity to lead an honest life with which I will have the scope to Utilize my skills and potentiality
-          to do something innovative for the society. To build my career with challenges dynamism and
-          professionalism.
+        <p><?php echo $resume['careerObjective']['des'] ?>
         </p>
       </div>
       <div class="present-status">
-        <h2>Present Status</h2>
+        <h2><?php echo $resume['presentStatus']['title'] ?></h2>
         <hr>
-        <p>I am working at <a href="https://www.anhenterprise.com/">ANH Enterprise Limited</a>, Dhaka, Bangladesh
-          as <strong>Asst.Engineer (web)</strong> <em>JULY 2021 – Present.</em>
-          Responsible for working on a range of projects, designing developing, appealing websites and
-          interacting on a daily basis with graphic designers, brand department and marketing
-          department.</p>
+        <p><?php echo $resume['presentStatus']['des'] ?></p>
       </div>
       <div class="education">
-        <h2>Education</h2>
+        <h2>
+          <?php echo $resume['education']['title'] ?>
+        </h2>
         <hr>
         <table>
           <tr>
@@ -57,77 +53,45 @@
             <th>Name of Institution</th>
             <th>Marks</th>
           </tr>
+          <?php foreach($resume['education']['exam']as $exam): ?>
           <tr>
-            <td>BSc in CSE (Computer Science Engineering)</td>
-            <td>University</td>
-            <td>2023</td>
-            <td>Uttara University</td>
-            <td>CGPA 3.82</td>
+            <td>
+              <?php echo $exam['name']; ?>
+            </td>
+            <td>
+              <?php echo $exam['board']; ?>
+            </td>
+            <td>
+              <?php echo $exam['year']; ?>
+            </td>
+            <td>
+              <?php echo $exam['institute']; ?>
+            </td>
+            <td>
+              <?php echo $exam['mark']; ?>
+            </td>
           </tr>
-          <tr>
-            <td>Alim/H.S.C(Higher Secondary Certificate)</td>
-            <td>Madrasah</td>
-            <td>2016</td>
-            <td>Jhalakati N. S. Kamil Madrasah</td>
-            <td>GPA 5.00</td>
-          </tr>
-          <tr>
-            <td>Dakhil/S.S.C (Secondary School Certificate)</td>
-            <td>Madrasah</td>
-            <td>2014</td>
-            <td>Faridpur Muslim Mission Madrasah</td>
-            <td>GPA 5.00</td>
-          </tr>
+          <?php endforeach; ?>
         </table>
       </div>
       <div class="computer-skills">
-        <h2>Computer Skills</h2>
+        <h2><?php echo $resume['computerskills']['title'] ?></h2>
         <hr>
         <table>
+          <?php foreach($resume['computerskills']['skills'] as $key => $skill): ?>
           <tr>
-            <td>Programming Languages</td>
+            <td><?php echo ucfirst($key); ?></td>
             <td>:</td>
-            <td>PHP, SQL, JavaScript, C, C++</td>
+            <td><?php echo $skill; ?></td>
           </tr>
-          <tr>
-            <td>Web based skills</td>
-            <td>:</td>
-            <td>Laravel, WordPress, Bootstrap, React Js, Vue Js, Rest API, Payment Gateway</td>
-          </tr>
-          <tr>
-            <td>Database skills</td>
-            <td>:</td>
-            <td>MYSQL</td>
-          </tr>
-          <tr>
-            <td>Scripting skills</td>
-            <td>:</td>
-            <td>PHP, JavaScript</td>
-          </tr>
-          <tr>
-            <td>Development Tools</td>
-            <td>:</td>
-            <td>Postman, GitHub, Chrome Developer Tools, Visual Studio Code</td>
-          </tr>
-          <tr>
-            <td>Others</td>
-            <td>:</td>
-            <td>Data Structure & Algorithm, Problem Solving</td>
-          </tr>
+          <?php endforeach; ?>
         </table>
       </div>
       <div class="professional-experience">
-        <h2>Professional Experience</h2>
+        <h2><?php echo $resume['exprerience']['title']; ?></h2>
         <hr>
         <p>
-          <a href="https://www.anhenterprise.com/">ANH Enterprise Limited</a>, Dhaka, Bangladesh
-          — <strong>Asst.Engineer (web)</strong> <em>JULY 2021 – Present.</em>
-          Responsible for working on a range of projects, designing developing, appealing websites and
-          interacting on a daily basis with graphic designers, brand department and marketing
-          department.<br>
-          <strong>Workgin area:</strong> <strong><a href="https://raylifebd.com/">E-commerce
-              application</a>,</strong> <strong>WordPress Plugin
-            Development,</strong> <strong>Google Analytics</strong>
+          <?php echo $resume['exprerience']['des']; ?>
         </p>
       </div>
       <div class="projects">
