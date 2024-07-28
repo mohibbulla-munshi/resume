@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- stylesheet -->
   <link rel="stylesheet" href="style.css">
-  <title>Resume</title>
+  <title>Resume of Mohibbulla Munshi</title>
 </head>
 
 <body>
